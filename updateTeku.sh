@@ -28,8 +28,8 @@ class Teku < Formula
   depends_on :java => "11+"
 
   def install
-    prefix.install "lib"
-    bin.install "bin/teku"
+    cp_r ".", "#{prefix}/dist"
+    bin.install_symlink "#{prefix}/dist/bin/teku"
   end
 
   test do
