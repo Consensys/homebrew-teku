@@ -1,9 +1,9 @@
 class Teku < Formula
   desc "Teku Ethereum 2 beacon chain client"
   homepage "https://github.com/consensys/teku"
-  url "https://bintray.com/consensys/pegasys-repo/download_file?file_path=teku-20.11.0-RC1.zip"
+  url "https://bintray.com/consensys/pegasys-repo/download_file?file_path=teku-20.11.0.zip"
   # update with: ./updateTeku.sh <new-version>
-  sha256 "ff9e9753990d159002c39bb136cceb32a1b4d502eb440dcd829ffe589962c552"
+  sha256 "1a4e86a75fe4c8bb6346eaf0443d54fb19d217cab8b8271570ee1007e741fcd9"
 
   depends_on :java => "11+"
 
