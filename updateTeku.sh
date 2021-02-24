@@ -8,7 +8,7 @@ function cleanup() {
 trap cleanup EXIT
 
 VERSION=${1?Must specify the Teku version to get}
-URL="https://bintray.com/consensys/pegasys-repo/download_file?file_path=teku-${VERSION}.zip"
+URL="https://artifacts.consensys.net/public/teku/raw/names/teku.zip/versions/${VERSION}/teku-${VERSION}.zip"
 echo "Downloading version ${VERSION} of Teku from ${URL}..."
 curl -o "${TEMP}/teku-${VERSION}.zip" -L --fail "${URL}"
 
