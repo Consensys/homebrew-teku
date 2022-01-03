@@ -24,6 +24,7 @@ class Teku < Formula
   url "${URL}"
   # update with: ./updateTeku.sh <new-version>
   sha256 "${HASH}"
+  head "https://artifacts.consensys.net/public/teku/raw/names/teku.zip/versions/develop/teku-develop.zip"
 
   depends_on "openjdk" => "11+"
 
