@@ -31,6 +31,24 @@ class Teku < Formula
   def install
     cp_r ".", "#{prefix}/dist"
     bin.install_symlink "#{prefix}/dist/bin/teku"
+
+    (buildpath/"teku.yaml").write <<~EOS
+      # Default Homebrew Teku config
+      network: "mainnet"
+      data-path: "#{etc}/teku.yaml"
+    EOS
+    etc.install "teku.yaml"
+  end
+
+  def post_install
+    # Make sure the var/teku directory exists
+    (var/"teku").mkpath
+  end
+
+  service do
+    run [opt_bin/"teku", "--config-file=#{etc}/teku.yaml"]
+    keep_alive true
+    working_dir var/"teku"
   end
 
   test do
