@@ -26,7 +26,7 @@ class Teku < Formula
   sha256 "${HASH}"
   head "https://artifacts.consensys.net/public/teku/raw/names/teku.zip/versions/develop/teku-develop.zip"
 
-  depends_on "openjdk" => "17+"
+  depends_on "openjdk" => "21+"
 
   def install
     cp_r ".", "#{prefix}/dist"
